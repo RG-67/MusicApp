@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/myMusic"
+        android:icon="@drawable/music"
+        android:title="My music"/>
+    <item
+        android:id="@+id/playMusic"
+        android:enabled="false"
+        android:title=""/>
+    <item
+        android:id="@+id/tunes"
+        android:icon="@drawable/microphone"
+        android:title="Tunes"/>
+    <item
+        android:id="@+id/premium"
+        android:icon="@drawable/logo"
+        android:title="Premium"/>
+
+</menu>
