@@ -16,6 +16,7 @@
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        style="@style/Widget.Design.BottomNavigationView"
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -29,23 +30,25 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_menu">
 
-        <LinearLayout
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+        <!--<LinearLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:background="@drawable/bottom_nav_btn_bg"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            android:gravity="center">
+            android:gravity="center">-->
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:src="@drawable/play"
-                app:tint="@color/white" />
-        </LinearLayout>
+                android:src="@drawable/top_sr_play"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"/>
+<!--        </LinearLayout>-->
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 

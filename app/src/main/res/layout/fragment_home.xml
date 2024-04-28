@@ -25,8 +25,8 @@
                 android:padding="20dp">
 
                 <LinearLayout
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:background="@drawable/name_bg"
                     android:gravity="center"
@@ -43,8 +43,8 @@
 
                 <ImageView
                     android:id="@+id/searchBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/search"
                     app:tint="@color/white"
                     android:layout_toLeftOf="@+id/settingBtn"
@@ -53,8 +53,8 @@
 
                 <ImageView
                     android:id="@+id/settingBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/settings"
                     app:tint="@color/white"
                     android:layout_alignParentEnd="true"
@@ -127,6 +127,7 @@
                         android:focusable="true"/>
                 </RelativeLayout>
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/topSrRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
@@ -164,6 +165,7 @@
                         android:focusable="true"/>
                 </RelativeLayout>
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/newRelRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
@@ -201,10 +203,12 @@
                         android:focusable="true"/>
                 </RelativeLayout>
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mixArtistRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"/>
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    tools:listitem="@layout/home_recycler_layout"/>
             </LinearLayout>
 
             <!-- Top Chart -->

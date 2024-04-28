@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="10dp"
+    app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true">
 
     <!-- Top search item -->
@@ -11,19 +11,20 @@
         android:id="@+id/topSrRel"
         android:layout_width="110dp"
         android:layout_height="150dp"
-        android:visibility="gone">
+        android:visibility="visible">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/top_sr"
             android:scaleType="fitXY"/>
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/top_sr_play"
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
-            android:layout_margin="10dp"/>
+            android:layout_margin="10dp"
+            app:tint="@color/white"/>
     </RelativeLayout>
 
     <!-- New release item -->
@@ -31,11 +32,11 @@
         android:id="@+id/newRlseRel"
         android:layout_width="130dp"
         android:layout_height="150dp"
-        android:visibility="visible">
+        android:visibility="gone">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/top_sr"
+            android:src="@drawable/new_rel"
             android:scaleType="fitXY"/>
         <TextView
             android:layout_width="wrap_content"
@@ -49,5 +50,52 @@
             android:gravity="center"
             android:layout_margin="10dp"/>
     </RelativeLayout>
+
+    <!-- Mix artist item -->
+    <RelativeLayout
+        android:id="@+id/mixArtistRel"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/artist"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/mix_artist_bg"
+            android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Taylor Swift"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mix"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#6E3EC5"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Taylor Swift Mix"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
 
 </com.google.android.material.card.MaterialCardView>
