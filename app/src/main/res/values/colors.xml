@@ -5,4 +5,7 @@
     <color name="main_color">#0FB659</color>
     <color name="bottom_item_color">#053E1E</color>
     <color name="gold">#FFD700</color>
+    <color name="grey">#555554</color>
+    <color name="main_back_bg_color">#171717</color>
+    <color name="orange">#FF5722</color>
 </resources>
