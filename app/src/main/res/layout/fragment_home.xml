@@ -241,10 +241,12 @@
                         android:focusable="true"/>
                 </RelativeLayout>
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/topChartRecycler"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"/>
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    tools:listitem="@layout/home_recycler_layout"/>
             </LinearLayout>
 
             <!-- Trending now -->

@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }*/
 
-        binding.bottomNav.selectedItemId = R.id.home
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout, homeFragment).commit()
         binding.bottomNav.setOnItemSelectedListener(object :
             NavigationBarView.OnItemSelectedListener {

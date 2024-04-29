@@ -8,12 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.project.musicapp.databinding.HomeRecyclerLayoutBinding
 import com.project.musicapp.model.mixArtist.MixArtistModel
 import com.project.musicapp.model.newRelease.NewReleaseModel
+import com.project.musicapp.model.topChart.TopChartModel
 import com.project.musicapp.model.topSearch.TopSearchModel
 
 class HomeAdapter(
     private val topModelList: ArrayList<TopSearchModel> = ArrayList(),
     private val newRelModelList: ArrayList<NewReleaseModel> = ArrayList(),
     private val mixArtistModelList: ArrayList<MixArtistModel> = ArrayList(),
+    private val topChartModelList: ArrayList<TopChartModel> = ArrayList(),
     private val adapterType: String = "",
     private val context: Context
 ) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
@@ -31,17 +33,29 @@ class HomeAdapter(
             "TopSearch" -> {
                 holder.binding.newRlseRel.visibility = View.GONE
                 holder.binding.mixArtistRel.visibility = View.GONE
+                holder.binding.topChartRel.visibility = View.GONE
                 holder.binding.topSrRel.visibility = View.VISIBLE
             }
+
             "NewRel" -> {
                 holder.binding.topSrRel.visibility = View.GONE
                 holder.binding.mixArtistRel.visibility = View.GONE
+                holder.binding.topChartRel.visibility = View.GONE
                 holder.binding.newRlseRel.visibility = View.VISIBLE
             }
+
+            "MixArtist" -> {
+                holder.binding.topSrRel.visibility = View.GONE
+                holder.binding.newRlseRel.visibility = View.GONE
+                holder.binding.topChartRel.visibility = View.GONE
+                holder.binding.mixArtistRel.visibility = View.VISIBLE
+            }
+
             else -> {
                 holder.binding.topSrRel.visibility = View.GONE
                 holder.binding.newRlseRel.visibility = View.GONE
-                holder.binding.mixArtistRel.visibility = View.VISIBLE
+                holder.binding.mixArtistRel.visibility = View.GONE
+                holder.binding.topChartRel.visibility = View.VISIBLE
             }
         }
     }
@@ -51,11 +65,17 @@ class HomeAdapter(
             "TopSearch" -> {
                 topModelList.size
             }
+
             "NewRel" -> {
                 newRelModelList.size
             }
-            else -> {
+
+            "MixArtist" -> {
                 mixArtistModelList.size
+            }
+
+            else -> {
+                topChartModelList.size
             }
         }
     }
