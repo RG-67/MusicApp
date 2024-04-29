@@ -1,4 +1,4 @@
-package com.project.musicapp.fragment
+package com.project.musicapp.fragment.mainFragment
 
 import android.content.Context
 import android.os.Bundle
@@ -6,8 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.project.musicapp.R
 import com.project.musicapp.adapter.homeAdapter.HomeAdapter
+import com.project.musicapp.adapter.homeAdapter.TrendPagerAdapter
 import com.project.musicapp.databinding.FragmentHomeBinding
 import com.project.musicapp.model.mixArtist.MixArtistModel
 import com.project.musicapp.model.newRelease.NewReleaseModel
@@ -23,6 +28,8 @@ class HomeFragment : Fragment() {
     private val mixArtistList = ArrayList<MixArtistModel>()
     private val topChartList = ArrayList<TopChartModel>()
     private var homeAdapter: HomeAdapter? = null
+    private var trendPagerAdapter: TrendPagerAdapter? = null
+    private var fragmentManager: FragmentManager? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -36,6 +43,7 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(layoutInflater)
 
         setAdapter()
+        setTrNowTab()
 
         return binding.root
     }
@@ -64,6 +72,28 @@ class HomeFragment : Fragment() {
         }
         homeAdapter = HomeAdapter(topSearchList, newRelList, mixArtistList, topChartList, "", ctx)
         binding.topChartRecycler.adapter = homeAdapter
+    }
+
+    private fun setTrNowTab() {
+        fragmentManager = requireActivity().supportFragmentManager
+        trendPagerAdapter =
+            TrendPagerAdapter(requireActivity().supportFragmentManager, requireActivity().lifecycle)
+        binding.trendNowViewPager.adapter = trendPagerAdapter
+        TabLayoutMediator(binding.trendNowTab, binding.trendNowViewPager) { tab, position ->
+            when (position) {
+                0 -> {
+                    tab.text = "Bengali"
+                }
+
+                1 -> {
+                    tab.text = "Hindi"
+                }
+
+                2 -> {
+                    tab.text = "English"
+                }
+            }
+        }.attach()
     }
 
 }

@@ -1,4 +1,4 @@
-package com.project.musicapp.fragment
+package com.project.musicapp.fragment.mainFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp"
-    app:cardUseCompatPadding="true">
+    app:cardCornerRadius="10dp"
+    app:cardUseCompatPadding="true"
+    android:backgroundTint="@color/black">
 
     <!-- Top search item -->
     <RelativeLayout
         android:id="@+id/topSrRel"
         android:layout_width="110dp"
         android:layout_height="150dp"
-        android:visibility="visible">
+        android:visibility="visible"
+        android:background="@drawable/home_item_bg">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="fitXY"
-            android:src="@drawable/top_sr" />
+            android:src="@drawable/top_sr"/>
 
         <ImageView
             android:layout_width="30dp"
@@ -107,13 +109,13 @@
     <!-- Top chart item -->
     <RelativeLayout
         android:id="@+id/topChartRel"
-        android:layout_width="120dp"
-        android:layout_height="150dp"
+        android:layout_width="130dp"
+        android:layout_height="170dp"
         android:visibility="gone">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="85dp"
             android:background="#EFD0A2"
             android:orientation="vertical"
             android:gravity="center_horizontal">
@@ -139,8 +141,8 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="60dp"
-            android:layout_height="75dp"
+            android:layout_width="75dp"
+            android:layout_height="85dp"
             android:layout_centerInParent="true"
             android:translationZ="2dp">
 
@@ -153,7 +155,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="85dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/top_chart_bg"
             android:gravity="bottom"
@@ -173,4 +175,4 @@
         </LinearLayout>
     </RelativeLayout>
 
-</com.google.android.material.card.MaterialCardView>
+</androidx.cardview.widget.CardView>

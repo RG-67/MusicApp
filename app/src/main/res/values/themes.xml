@@ -18,5 +18,9 @@
     <style name="bottom_nav_active_indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
         <item name="android:color">@android:color/transparent</item>
     </style>
+
+    <style name="roundShapeImage" parent="">
+        <item name="cornerSize">10%</item>
+    </style>
     
 </resources>

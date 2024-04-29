@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.trendNowFragment.HindiTrendFragment"
+    android:orientation="vertical"
+    app:cardCornerRadius="10dp"
+    android:backgroundTint="@color/black">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/bngImg"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:src="@drawable/hnd_artist"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"/>
+        <LinearLayout
+            android:layout_below="@+id/bngImg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/mix_artist_bg"
+            android:translationY="-10dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/brTrendrecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                tools:listitem="@layout/trending_recycler_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

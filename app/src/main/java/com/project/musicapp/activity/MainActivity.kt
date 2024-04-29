@@ -7,8 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.navigation.NavigationBarView
 import com.project.musicapp.R
 import com.project.musicapp.databinding.ActivityMainBinding
-import com.project.musicapp.fragment.HomeFragment
-import com.project.musicapp.fragment.MyMusicFragment
+import com.project.musicapp.fragment.mainFragment.HomeFragment
+import com.project.musicapp.fragment.mainFragment.MyMusicFragment
 
 class MainActivity : AppCompatActivity() {
 
