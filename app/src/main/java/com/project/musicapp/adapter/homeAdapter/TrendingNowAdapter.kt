@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.musicapp.databinding.TrendingRecyclerItemBinding
-import com.project.musicapp.model.trendingNow.TrendingNowModel
+import com.project.musicapp.model.homeModel.trendingNow.TrendingNowModel
 
 class TrendingNowAdapter(
     private val trModelList: ArrayList<TrendingNowModel> = ArrayList(),

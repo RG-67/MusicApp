@@ -1,4 +1,4 @@
-package com.project.musicapp.model.mixArtist
+package com.project.musicapp.model.homeModel.mixArtist
 
 data class MixArtistModel(
     val image: Int,

@@ -20,8 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 //        enableEdgeToEdge()
-        setContentView(binding.root)
-        /*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        setContentView(binding.root)/*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -38,15 +37,15 @@ class MainActivity : AppCompatActivity() {
                         return true
                     }
 
-                    R.id.myMusic -> {
-                        supportFragmentManager.beginTransaction()
-                            .replace(R.id.frameLayout, myMusicFragment).commit()
+                    R.id.search -> {
+                        Toast.makeText(this@MainActivity, "Search selected..", Toast.LENGTH_SHORT)
+                            .show()
                         return true
                     }
 
-                    R.id.tunes -> {
-                        Toast.makeText(this@MainActivity, "Tunes selected..", Toast.LENGTH_SHORT)
-                            .show()
+                    R.id.myMusic -> {
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.frameLayout, myMusicFragment).commit()
                         return true
                     }
 

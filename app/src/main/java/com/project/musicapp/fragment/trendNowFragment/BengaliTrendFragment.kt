@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import com.project.musicapp.R
 import com.project.musicapp.adapter.homeAdapter.TrendingNowAdapter
 import com.project.musicapp.databinding.FragmentBengaliTrendBinding
-import com.project.musicapp.model.trendingNow.TrendingNowModel
+import com.project.musicapp.model.homeModel.trendingNow.TrendingNowModel
 
 class BengaliTrendFragment : Fragment() {
 

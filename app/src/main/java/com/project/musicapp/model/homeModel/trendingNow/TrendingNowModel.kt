@@ -1,4 +1,4 @@
-package com.project.musicapp.model.trendingNow
+package com.project.musicapp.model.homeModel.trendingNow
 
 data class TrendingNowModel(
     val img: Int,

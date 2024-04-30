@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.project.musicapp.databinding.HomeRecyclerLayoutBinding
-import com.project.musicapp.model.mixArtist.MixArtistModel
-import com.project.musicapp.model.newRelease.NewReleaseModel
-import com.project.musicapp.model.topChart.TopChartModel
-import com.project.musicapp.model.topSearch.TopSearchModel
+import com.project.musicapp.model.homeModel.mixArtist.MixArtistModel
+import com.project.musicapp.model.homeModel.newRelease.NewReleaseModel
+import com.project.musicapp.model.homeModel.topChart.TopChartModel
+import com.project.musicapp.model.homeModel.topSearch.TopSearchModel
 
 class HomeAdapter(
     private val topModelList: ArrayList<TopSearchModel> = ArrayList(),

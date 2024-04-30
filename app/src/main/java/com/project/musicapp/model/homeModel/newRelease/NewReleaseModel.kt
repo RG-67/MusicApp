@@ -1,4 +1,4 @@
-package com.project.musicapp.model.newRelease
+package com.project.musicapp.model.homeModel.newRelease
 
 data class NewReleaseModel(
     val img: Int,
