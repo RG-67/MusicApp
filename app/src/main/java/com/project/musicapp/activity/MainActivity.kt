@@ -1,5 +1,6 @@
 package com.project.musicapp.activity
 
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -9,6 +10,7 @@ import com.project.musicapp.R
 import com.project.musicapp.databinding.ActivityMainBinding
 import com.project.musicapp.fragment.mainFragment.HomeFragment
 import com.project.musicapp.fragment.mainFragment.MyMusicFragment
+import com.project.musicapp.fragment.mainFragment.PlayMusicFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,12 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-//        enableEdgeToEdge()
-        setContentView(binding.root)/*ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }*/
+        setContentView(binding.root)
 
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout, homeFragment).commit()
         binding.bottomNav.setOnItemSelectedListener(object :
@@ -60,5 +57,6 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
     }
 }

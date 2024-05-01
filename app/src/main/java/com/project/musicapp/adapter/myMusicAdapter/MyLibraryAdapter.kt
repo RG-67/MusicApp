@@ -1,12 +1,15 @@
 package com.project.musicapp.adapter.myMusicAdapter
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.project.musicapp.R
+import com.project.musicapp.clickListener.AdapterClickListener
 import com.project.musicapp.databinding.MyLibItemBinding
 import com.project.musicapp.model.myMusicModel.myLibraryModel.MyLibraryModel
 
@@ -15,6 +18,8 @@ class MyLibraryAdapter(
     private val context: Context,
     private val viewType: String
 ) : RecyclerView.Adapter<MyLibraryAdapter.ViewHolder>() {
+
+    private var adapterClickListener: AdapterClickListener? = null
 
     class ViewHolder(val binding: MyLibItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -97,9 +102,17 @@ class MyLibraryAdapter(
                 holder.binding.gridLibDesc.text = myLibList[position].desc
             }
         }
+        holder.itemView.setOnClickListener {
+            adapterClickListener?.onClick()
+        }
     }
 
     override fun getItemCount(): Int {
         return myLibList.size
     }
+
+    fun setAdapterOnclick(listener: AdapterClickListener) {
+        this.adapterClickListener = listener
+    }
+
 }

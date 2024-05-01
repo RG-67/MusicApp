@@ -1,193 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.mainFragment.MyMusicFragment"
     android:background="@color/black"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".fragment.mainFragment.MyMusicFragment">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <!-- Top view -->
-            <RelativeLayout
+            <!-- My music lin -->
+            <LinearLayout
+                android:id="@+id/myLibLin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible">
+                <!-- Top view -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="20dp">
 
-                <LinearLayout
-                    android:id="@+id/name"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/name_bg"
-                    android:gravity="center"
-                    android:layout_centerVertical="true">
+                    <LinearLayout
+                        android:id="@+id/name"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/name_bg"
+                        android:gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center_vertical"
+                            android:text="R"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+                    </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-black"
-                        android:text="R"
-                        android:textColor="@color/black"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_toRightOf="@+id/name"
+                        android:fontFamily="sans-serif"
+                        android:text="My Library"
+                        android:textColor="@color/white"
                         android:textSize="20sp"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="center_vertical"/>
-                </LinearLayout>
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/name"
-                    android:text="My Library"
-                    android:textSize="20sp"
-                    android:textColor="@color/white"
-                    android:fontFamily="sans-serif"
-                    android:textStyle="bold"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="20dp"/>
+                    <ImageView
+                        android:id="@+id/searchBtn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="20dp"
+                        android:layout_toLeftOf="@+id/settingBtn"
+                        android:src="@drawable/search"
+                        app:tint="@color/white" />
 
-                <ImageView
-                    android:id="@+id/searchBtn"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/search"
-                    app:tint="@color/white"
-                    android:layout_toLeftOf="@+id/settingBtn"
-                    android:layout_centerVertical="true"
-                    android:layout_marginEnd="20dp"/>
+                    <ImageView
+                        android:id="@+id/settingBtn"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/add"
+                        app:tint="@color/white" />
 
-                <ImageView
-                    android:id="@+id/settingBtn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/add"
-                    app:tint="@color/white"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"/>
+                </RelativeLayout>
 
-            </RelativeLayout>
-
-            <!-- Select type -->
-            <HorizontalScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scrollbars="none">
-                <LinearLayout
+                <!-- Select type -->
+                <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="20dp">
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:text="Playlist"
-                    android:textColor="@color/white"
-                    android:background="@drawable/my_lib_bg"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginEnd="10dp"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"/>
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:text="Podcast"
-                    android:textColor="@color/white"
-                    android:background="@drawable/my_lib_bg"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginEnd="10dp"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"/>
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:text="Artist"
-                    android:textColor="@color/white"
-                    android:background="@drawable/my_lib_bg"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginEnd="10dp"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"/>
-                <TextView
-                    android:layout_width="80dp"
-                    android:layout_height="25dp"
-                    android:text="Download"
-                    android:textColor="@color/white"
-                    android:background="@drawable/my_lib_bg"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:layout_marginEnd="10dp"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"/>
-                </LinearLayout>
-            </HorizontalScrollView>
+                    android:scrollbars="none">
 
-            <!-- Filter -->
-            <RelativeLayout
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/my_lib_bg"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:text="Playlist"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/my_lib_bg"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:text="Podcast"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/my_lib_bg"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:text="Artist"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="25dp"
+                            android:layout_gravity="center"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/my_lib_bg"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:gravity="center"
+                            android:text="Download"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- Filter -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/filterBtn"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/up_down_arrow"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/filterBtn"
+                        android:text="Recent"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/viewTypeBtn"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:src="@drawable/dots"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myLibRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    tools:listitem="@layout/my_lib_item" />
+            </LinearLayout>
+
+            <!-- Music type lin -->
+            <LinearLayout
+                android:id="@+id/musicListLin"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="20dp">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone">
+
                 <ImageView
-                    android:id="@+id/filterBtn"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
-                    android:src="@drawable/up_down_arrow"
-                    app:tint="@color/white"
-                    android:layout_centerVertical="true"/>
+                    android:id="@+id/downBackBtn"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/arrow_back"/>
+
                 <TextView
-                    android:layout_toRightOf="@+id/filterBtn"
+                    android:id="@+id/songType"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Recent"
-                    android:textSize="12sp"
+                    android:text="Liked Songs"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_centerVertical="true"
+                    android:textSize="18sp"
+                    android:fontFamily="sans-serif-black"
+                    android:layout_marginTop="50dp"
                     android:layout_marginStart="10dp"/>
-                <ImageView
-                    android:id="@+id/viewTypeBtn"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/dots"
-                    app:tint="@color/white"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:foreground="?attr/selectableItemBackground"
-                    android:clickable="true"
-                    android:focusable="true"/>
-            </RelativeLayout>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/myLibRecycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                tools:listitem="@layout/my_lib_item"/>
+                <TextView
+                    android:id="@+id/numberOfSongs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="5 songs"
+                    android:textColor="@color/light_grey"
+                    android:textSize="12sp"
+                    android:layout_marginStart="10dp"/>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/musicListRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    tools:listitem="@layout/music_item_layout"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

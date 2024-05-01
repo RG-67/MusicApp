@@ -10,10 +10,6 @@
         android:icon="@drawable/nav_search"
         android:title="Search"/>
     <item
-        android:id="@+id/playMusic"
-        android:enabled="false"
-        android:title=""/>
-    <item
         android:id="@+id/myMusic"
         android:icon="@drawable/music"
         android:title="My music"/>

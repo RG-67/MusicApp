@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/linView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="visible">
+            <ImageView
+                android:id="@+id/songImg"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/album1"
+                android:layout_centerVertical="true"/>
+        <LinearLayout
+            android:id="@+id/songDetailLin"
+            android:layout_toRightOf="@+id/songImg"
+            android:layout_toLeftOf="@+id/moreBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/songName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Song Name"
+                android:textSize="15sp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp">
+                <TextView
+                    android:id="@+id/songType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lyrics"
+                    android:layout_marginEnd="10dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/grey"
+                    android:background="@color/light_grey"/>
+                <TextView
+                    android:id="@+id/artistName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Artist Name"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/light_grey"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/moreBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/more"
+            app:tint="@color/light_grey"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>
