@@ -10,4 +10,6 @@
     <color name="main_back_bg_color">#171717</color>
     <color name="orange">#FF5722</color>
     <color name="light_blue">#A2ACE3</color>
+    <color name="light_green">#34975F</color>
+    <color name="deep_blue">#1229A6</color>
 </resources>

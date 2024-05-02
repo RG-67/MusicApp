@@ -1,6 +1,5 @@
 package com.project.musicapp.activity
 
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -10,13 +9,16 @@ import com.project.musicapp.R
 import com.project.musicapp.databinding.ActivityMainBinding
 import com.project.musicapp.fragment.mainFragment.HomeFragment
 import com.project.musicapp.fragment.mainFragment.MyMusicFragment
-import com.project.musicapp.fragment.mainFragment.PlayMusicFragment
+import com.project.musicapp.fragment.mainFragment.PremiumFragment
+import com.project.musicapp.fragment.mainFragment.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val homeFragment = HomeFragment()
     private val myMusicFragment = MyMusicFragment()
+    private val searchFragment = SearchFragment()
+    private val premiumFragment = PremiumFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +37,8 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.search -> {
-                        Toast.makeText(this@MainActivity, "Search selected..", Toast.LENGTH_SHORT)
-                            .show()
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.frameLayout, searchFragment).commit()
                         return true
                     }
 
@@ -47,8 +49,8 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     R.id.premium -> {
-                        Toast.makeText(this@MainActivity, "Premium selected..", Toast.LENGTH_SHORT)
-                            .show()
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.frameLayout, premiumFragment).commit()
                         return true
                     }
 

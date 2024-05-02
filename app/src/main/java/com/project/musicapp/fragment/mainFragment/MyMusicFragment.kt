@@ -62,14 +62,26 @@ class MyMusicFragment : Fragment(), AdapterClickListener {
 
     private fun setAdapter(type: String) {
         myLibList.clear()
-        myLibList.add(MyLibraryModel(R.drawable.like, "Liked Songs", "Playlist . 12 songs", "Lib"))
-        myLibList.add(MyLibraryModel(R.drawable.like, "Liked Songs", "Playlist . 12 songs", "Lib"))
-        myLibList.add(MyLibraryModel(R.drawable.like, "Liked Songs", "Playlist . 12 songs", "Lib"))
-        myLibList.add(MyLibraryModel(R.drawable.like, "Liked Songs", "Playlist . 12 songs", "Lib"))
-        myLibList.add(MyLibraryModel(R.drawable.like, "Liked Songs", "Playlist . 12 songs", "Lib"))
+        myLibList.add(MyLibraryModel(R.drawable.heart, "Liked Songs", "Playlist . 12 songs", "Lib"))
+        myLibList.add(
+            MyLibraryModel(
+                R.drawable.ribbon,
+                "Your Episodes",
+                "Saved & downloaded episodes",
+                "Lib"
+            )
+        )
+        myLibList.add(
+            MyLibraryModel(
+                R.drawable.folder,
+                "Local Files",
+                "Playlist . 10 tracks",
+                "Lib"
+            )
+        )
         myLibList.add(MyLibraryModel(R.drawable.top_chart, "Taylor Swift", "Artist", "Artist"))
-        myLibList.add(MyLibraryModel(R.drawable.top_chart, "Taylor Swift", "Artist", "Artist"))
-        myLibList.add(MyLibraryModel(R.drawable.top_chart, "Taylor Swift", "Artist", "Artist"))
+        myLibList.add(MyLibraryModel(R.drawable.album2, "Justin Bieber", "Artist", "Artist"))
+        myLibList.add(MyLibraryModel(R.drawable.new_rel, "Selena Gomez", "Artist", "Artist"))
         myLibList.add(MyLibraryModel(R.drawable.add, "Add artists", "", ""))
         myLibList.add(MyLibraryModel(R.drawable.add, "Add podcasts", "", ""))
         if (type == "Linear") {
@@ -88,7 +100,13 @@ class MyMusicFragment : Fragment(), AdapterClickListener {
         musicItemList.add(MusicItemModel(R.drawable.album1, "The Nights", "Avicii"))
         musicItemList.add(MusicItemModel(R.drawable.album2, "Sweat Dreams - Remix", "Tobbyum"))
         musicItemList.add(MusicItemModel(R.drawable.album3, "Calm Down", "Rema, Selena Gomez"))
-        musicItemList.add(MusicItemModel(R.drawable.album4, "Habibi - Albanian Remix", "Ricky Rich, Dardan"))
+        musicItemList.add(
+            MusicItemModel(
+                R.drawable.album4,
+                "Habibi - Albanian Remix",
+                "Ricky Rich, Dardan"
+            )
+        )
         musicItemList.add(MusicItemModel(R.drawable.album5, "Believer", "Imagine Dragons"))
         musicListAdapter = MusicListAdapter(musicItemList, ctx)
         binding.musicListRecycler.adapter = musicListAdapter

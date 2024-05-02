@@ -35,6 +35,7 @@ class HomeAdapter(
                 holder.binding.mixArtistRel.visibility = View.GONE
                 holder.binding.topChartRel.visibility = View.GONE
                 holder.binding.topSrRel.visibility = View.VISIBLE
+                holder.binding.tpImg.setImageResource(topModelList[position].img)
             }
 
             "NewRel" -> {
@@ -42,6 +43,7 @@ class HomeAdapter(
                 holder.binding.mixArtistRel.visibility = View.GONE
                 holder.binding.topChartRel.visibility = View.GONE
                 holder.binding.newRlseRel.visibility = View.VISIBLE
+                holder.binding.newRelImg.setImageResource(newRelModelList[position].img)
             }
 
             "MixArtist" -> {
@@ -49,6 +51,9 @@ class HomeAdapter(
                 holder.binding.newRlseRel.visibility = View.GONE
                 holder.binding.topChartRel.visibility = View.GONE
                 holder.binding.mixArtistRel.visibility = View.VISIBLE
+                holder.binding.mixImg.setImageResource(mixArtistModelList[position].image)
+                holder.binding.mixArtistName.text = mixArtistModelList[position].artistName
+                holder.binding.mixName.text = mixArtistModelList[position].artistName+" Mix"
             }
 
             else -> {
@@ -56,6 +61,7 @@ class HomeAdapter(
                 holder.binding.newRlseRel.visibility = View.GONE
                 holder.binding.mixArtistRel.visibility = View.GONE
                 holder.binding.topChartRel.visibility = View.VISIBLE
+                holder.binding.topChartImg.setImageResource(topChartModelList[position].img)
             }
         }
     }

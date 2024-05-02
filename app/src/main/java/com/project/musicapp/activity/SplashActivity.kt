@@ -1,9 +1,11 @@
 package com.project.musicapp.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import androidx.activity.enableEdgeToEdge
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -24,7 +26,15 @@ class SplashActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+            showSplash()
+        } else {
+            startActivity(Intent(this@SplashActivity, MainActivity::class.java))
+            finish()
+        }
+    }
 
+    private fun showSplash() {
         Handler().postDelayed(
             {
                 run {
@@ -33,6 +43,6 @@ class SplashActivity : AppCompatActivity() {
                 }
             }, 2000
         )
-
     }
+
 }

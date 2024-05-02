@@ -49,27 +49,39 @@ class HomeFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        for (i in 0 until 5) {
-            topSearchList.add(TopSearchModel(R.drawable.top_sr))
-        }
+        topSearchList.add(TopSearchModel(R.drawable.top_sr))
+        topSearchList.add(TopSearchModel(R.drawable.album3))
+        topSearchList.add(TopSearchModel(R.drawable.new_rel))
+        topSearchList.add(TopSearchModel(R.drawable.album1))
+        topSearchList.add(TopSearchModel(R.drawable.hnd_artist))
         homeAdapter =
             HomeAdapter(topSearchList, newRelList, mixArtistList, topChartList, "TopSearch", ctx)
         binding.topSrRecycler.adapter = homeAdapter
-        for (i in 0 until 5) {
-            newRelList.add(NewReleaseModel(R.drawable.new_rel, "New English\nSongs"))
-        }
+
+        newRelList.add(NewReleaseModel(R.drawable.new_rel, "New English\nSongs"))
+        newRelList.add(NewReleaseModel(R.drawable.bng_artist, "New Pop\nSongs"))
+        newRelList.add(NewReleaseModel(R.drawable.top_chart, "New Instrument"))
+        newRelList.add(NewReleaseModel(R.drawable.top_sr, "New Rock\nSongs"))
+        newRelList.add(NewReleaseModel(R.drawable.album2, "New English\nSongs"))
         homeAdapter =
             HomeAdapter(topSearchList, newRelList, mixArtistList, topChartList, "NewRel", ctx)
         binding.newRelRecycler.adapter = homeAdapter
-        for (i in 0 until 5) {
-            mixArtistList.add(MixArtistModel(R.drawable.artist, "Taylor Swift"))
-        }
+
+
+        mixArtistList.add(MixArtistModel(R.drawable.artist, "Taylor Swift"))
+        mixArtistList.add(MixArtistModel(R.drawable.album2, "Justin Bieber"))
+        mixArtistList.add(MixArtistModel(R.drawable.top_chart, "Taylor Swift"))
+        mixArtistList.add(MixArtistModel(R.drawable.new_rel, "Selena Gomez"))
+        mixArtistList.add(MixArtistModel(R.drawable.artist, "Taylor Swift"))
         homeAdapter =
             HomeAdapter(topSearchList, newRelList, mixArtistList, topChartList, "MixArtist", ctx)
         binding.mixArtistRecycler.adapter = homeAdapter
-        for (i in 0 until 5) {
-            topChartList.add(TopChartModel(R.drawable.top_chart))
-        }
+
+        topChartList.add(TopChartModel(R.drawable.top_chart))
+        topChartList.add(TopChartModel(R.drawable.album5))
+        topChartList.add(TopChartModel(R.drawable.album3))
+        topChartList.add(TopChartModel(R.drawable.top_sr))
+        topChartList.add(TopChartModel(R.drawable.artist))
         homeAdapter = HomeAdapter(topSearchList, newRelList, mixArtistList, topChartList, "", ctx)
         binding.topChartRecycler.adapter = homeAdapter
     }
